@@ -1,6 +1,6 @@
 <?php
 
-namespace RifkyEkayama\RajaOngkir;
+namespace IsnanIas\RajaOngkir;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -29,7 +29,7 @@ class RajaOngkirServiceProvider extends ServiceProvider
         //
         $this->registerRajaOngkir();
 
-        $this->app->alias('rajaOngkir', 'RifkyEkayama\RajaOngkir\Endpoints');
+        $this->app->alias('rajaOngkir', 'IsnanIas\RajaOngkir\Endpoints');
     }
 
     public function registerRajaOngkir(){
