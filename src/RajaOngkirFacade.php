@@ -1,11 +1,11 @@
 <?php
 
-namespace RifkyEkayama\RajaOngkir;
+namespace IsnanIas\RajaOngkir;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \RifkyEkayama\RajaOngkir\EndPoints
+ * @see \IsnanIas\RajaOngkir\EndPoints
  */
 class RajaOngkirFacade extends Facade
 {
