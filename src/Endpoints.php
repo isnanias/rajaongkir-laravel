@@ -26,7 +26,10 @@ class Endpoints {
     public function province($province_id = NULL) {
         $params = (is_null($province_id)) ? array() : array('id' => $province_id);
         $rest_client = new RESTClient($this->api_key, 'province', $this->account_type);
-        return $rest_client->get($params);
+        
+        $result = json_decode($rest_client->get($params), true);
+        
+        return $result['rajaongkir']['results'];
     }
 
     /**
@@ -41,7 +44,10 @@ class Endpoints {
             $params['id'] = $city_id;
         }
         $rest_client = new RESTClient($this->api_key, 'city', $this->account_type);
-        return $rest_client->get($params);
+        
+        $result = json_decode($rest_client->get($params), true);
+        
+        return $result['rajaongkir']['results'];
     }
 
     /**
@@ -56,7 +62,10 @@ class Endpoints {
             $params['id'] = $subdistrict_id;
         }
         $rest_client = new RESTClient($this->api_key, 'subdistrict', $this->account_type);
-        return $rest_client->get($params);
+        
+        $result = json_decode($rest_client->get($params), true);
+        
+        return $result['rajaongkir']['results'];
     }
 
     /**
@@ -79,7 +88,10 @@ class Endpoints {
             'courier' => $courier
         );
         $rest_client = new RESTClient($this->api_key, 'cost', $this->account_type);
-        return $rest_client->post($params);
+        
+        $result = json_decode($rest_client->post($params), true);
+        
+        return $result['rajaongkir']['results'];
     }
 
     /**
@@ -95,7 +107,10 @@ class Endpoints {
             $params['id'] = $city_id;
         }
         $rest_client = new RESTClient($this->api_key, 'internationalOrigin', $this->account_type);
-        return $rest_client->get($params);
+        
+        $result = json_decode($rest_client->get($params), true);
+        
+        return $result['rajaongkir']['results'];
     }
 
     /**
@@ -107,7 +122,10 @@ class Endpoints {
     public function internationalDestination($country_id = NULL) {
         $params = (is_null($country_id)) ? array() : array('id' => $country_id);
         $rest_client = new RESTClient($this->api_key, 'internationalDestination', $this->account_type);
-        return $rest_client->get($params);
+        
+        $result = json_decode($rest_client->get($params), true);
+        
+        return $result['rajaongkir']['results'];
     }
 
     /**
@@ -127,7 +145,10 @@ class Endpoints {
             'courier' => $courier
         );
         $rest_client = new RESTClient($this->api_key, 'internationalCost', $this->account_type);
-        return $rest_client->post($params);
+        
+        $result = json_decode($rest_client->post($params), true);
+        
+        return $result['rajaongkir']['results'];
     }
 
     /**
@@ -137,7 +158,10 @@ class Endpoints {
      */
     public function currency() {
         $rest_client = new RESTClient($this->api_key, 'currency', $this->account_type);
-        return $rest_client->get(array());
+        
+        $result = json_decode($rest_client->get(array()), true);
+        
+        return $result['rajaongkir']['results'];
     }
 
     /**
@@ -153,7 +177,10 @@ class Endpoints {
             'courier' => $courier
         );
         $rest_client = new RESTClient($this->api_key, 'waybill', $this->account_type);
-        return $rest_client->post($params);
+        
+        $result = json_decode($rest_client->post($params), true);
+        
+        return $result['rajaongkir']['results'];
     }
 
 }
