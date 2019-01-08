@@ -1,5 +1,5 @@
 {
-    "name": "rifkyekayama/rajaongkir-laravel",
+    "name": "isnanias/rajaongkir-laravel",
     "description": "Package untuk request API RajaOngkir, Support Starter, Basic, dan Pro",
     "keywords": [
         "rajaongkir", "application programming interface", "laravel"
@@ -8,8 +8,8 @@
     "type": "package",
     "authors": [
         {
-            "name": "Rifky Ekayama",
-            "email": "rifkyekayama@gmail.com"
+            "name": "Isnan Ias",
+            "email": "isnaniasdev@gmail.com"
         }
     ],
     "require": {
@@ -18,7 +18,7 @@
     },
     "autoload": {
     	"psr-4": {
-    		"RifkyEkayama\\RajaOngkir\\": "src/"
+    		"IsnanIas\\RajaOngkir\\": "src/"
     	}
     }
 }
