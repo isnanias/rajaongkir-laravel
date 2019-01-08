@@ -1,6 +1,6 @@
 <?php 
 
-namespace RifkyEkayama\RajaOngkir;
+namespace IsnanIas\RajaOngkir;
 
 /**
  * RajaOngkir REST Client
