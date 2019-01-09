@@ -89,9 +89,27 @@ class Endpoints {
         );
         $rest_client = new RESTClient($this->api_key, 'cost', $this->account_type);
         
-        $result = json_decode($rest_client->post($params), true);
+        $data = json_decode($rest_client->post($params), true);
         
-        return $result['rajaongkir']['results'];
+        $result = [];
+        
+        if(!empty($data['rajaongkir']['results'][0]['costs'])) {
+            foreach($data['rajaongkir']['results'][0]['costs'] as $item) {
+                if(!empty($item['cost'])) {
+                    foreach($item['cost'] as $val) {
+                        $result[] = [
+                            'service'   => $item['service'],
+                            'name'      => $item['description'],
+                            'etd'       => $val['etd'],
+                            'price'     => $val['value'],
+                            'note'      => $val['note']
+                        ];
+                    }
+                }
+            }
+        }
+        
+        return $result;
     }
 
     /**
